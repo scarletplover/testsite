@@ -1,0 +1,149 @@
+@model IEnumerable<testsite.Models.Member>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NameKana)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MailAddress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PostNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AgreePolicy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Twitter)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BirthDay)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Office)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Yakushoku)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RepeatCount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Issue)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserNotes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FamousPoint)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SkillPoint)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsAccept)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsVip)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WacateNotes)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameKana)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgreePolicy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Twitter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Office)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yakushoku)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepeatCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Issue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserNotes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FamousPoint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkillPoint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAccept)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsVip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WacateNotes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobType.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

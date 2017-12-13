@@ -1,0 +1,169 @@
+@model testsite.Models.Member
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Member</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="NameKana" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="NameKana" class="form-control" />
+                <span asp-validation-for="NameKana" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="MailAddress" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="MailAddress" class="form-control" />
+                <span asp-validation-for="MailAddress" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PostNo" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PostNo" class="form-control" />
+                <span asp-validation-for="PostNo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Address1" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Address1" class="form-control" />
+                <span asp-validation-for="Address1" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Address2" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Address2" class="form-control" />
+                <span asp-validation-for="Address2" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="AgreePolicy" />
+                    <label asp-for="AgreePolicy"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Twitter" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Twitter" class="form-control" />
+                <span asp-validation-for="Twitter" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BirthDay" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BirthDay" class="form-control" />
+                <span asp-validation-for="BirthDay" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Office" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Office" class="form-control" />
+                <span asp-validation-for="Office" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="JobTypeId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="JobTypeId" class ="form-control" asp-items="ViewBag.JobTypeId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Yakushoku" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Yakushoku" class="form-control" />
+                <span asp-validation-for="Yakushoku" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="RepeatCount" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="RepeatCount" class="form-control" />
+                <span asp-validation-for="RepeatCount" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Issue" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Issue" class="form-control" />
+                <span asp-validation-for="Issue" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="UserNotes" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="UserNotes" class="form-control" />
+                <span asp-validation-for="UserNotes" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FamousPoint" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FamousPoint" class="form-control" />
+                <span asp-validation-for="FamousPoint" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="SkillPoint" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="SkillPoint" class="form-control" />
+                <span asp-validation-for="SkillPoint" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="IsAccept" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="IsAccept" class="form-control" />
+                <span asp-validation-for="IsAccept" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="IsVip" />
+                    <label asp-for="IsVip"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="WacateNotes" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="WacateNotes" class="form-control" />
+                <span asp-validation-for="WacateNotes" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,40 @@
+﻿@model testsite.Views.Accept.Accept4ViewModel
+
+@{
+    ViewData["Title"] = "BlackWacateお申込み";
+}
+
+<h2>BlackWacateお申込み</h2>
+
+<form asp-action="Accept4">
+    <div class="form-horizontal">
+        <h4>－その他－</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Issue" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <textarea asp-for="Issue" rows="3" class="form-control"></textarea>
+                <span asp-validation-for="Issue" class="tex"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="UserNotes" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <textarea asp-for="UserNotes" rows="3" class="form-control"></textarea>
+                <span asp-validation-for="UserNotes" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="申請する" class="btn btn-default" />
+                <a asp-action="Index" class="btn btn-default">戻る</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

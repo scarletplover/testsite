@@ -1,0 +1,79 @@
+﻿@model testsite.Views.Accept.AgreementViewModel
+
+@{
+    ViewData["Title"] = "BlackWacateお申込み";
+}
+
+<h2>BlackWacateお申込み</h2>
+
+<form asp-action="Agreement">
+    <div class="form-horizontal">
+        <h4>-個人情報の取り扱いについて-</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="well">
+            <h6>個人情報の取り扱いについて</h6>
+            <blockquote dir="ltr" style="margin-right: 0px;">
+                <p class="chu">本ワークショップ(WACATE)は、ボランティアベースのイベントではありますが、ワークショップへの参加申し込みなど、個人情報を提供していただく必要があります。WACATE実行委員会は、個人情報保護の重要性を認識し、以下の取り組みを実施いたします。</p>
+                <ol>
+                    <li>WACATE実行委員会は、参加者に関する個人情報(以下、個人情報)を適切に管理いたします。</li>
+                    <li>参加者から個人情報を提供していただく際には、利用目的を特定するとともに、当方の窓口を明示した上で、必要な範囲の個人情報を取得させていただきます。</li>
+                    <li>取得した個人情報は、ワークショップの運営目的以外で第三者に提供・開示などは一切いたしませんが、当サイトでの情報公開(イベントレポート等)やメディアへの情報提供(雑誌記事への掲載等)、コンテンツ作成協力者への情報提供(成果物等)を行うことがあります。その際には、個人を特定できない形にまとめた上で行うものとします。</li>
+                </ol>
+            </blockquote>
+            <p align="right">
+                2008年10月14日制定/2014年9月16日改訂<br>WACATE実行委員会
+            </p>
+            <h6>利用目的について</h6>
+            <blockquote dir="ltr" style="margin-right: 0px;">
+                <p>参加者に関する個人情報(以下、個人情報)は以下の目的で利用いたします。</p>
+                <ol>
+                    <li>ワークショップに関するWACATE実行委員会からの情報提供・ご案内を行うために利用いたします。</li>
+                    <li>ワークショップの運営・改善のために利用いたします。</li>
+                    <li>当サイトの作成・改善のために利用いたします。</li>
+                    <li>上記の利用目的を達成するために、電子メールやコミュニティサイトでのお知らせ等による連絡を行う場合に利用いたします。</li>
+                </ol>
+            </blockquote>
+            <h6>取得について</h6>
+            <blockquote dir="ltr" style="margin-right: 0px;">
+                <p>ワークショップ参加申し込みの際に、参加者の同意に基づき情報を入力していただくことにより、個人情報を取得させていただきます。</p>
+            </blockquote>
+            <h6>サーバ運用記録について</h6>
+            <blockquote dir="ltr" style="margin-right: 0px;">
+                <p>当サイトでは、快適なサービス利用ならびに安定的な運用を行うため、いわゆるウェブビーコン等の技術を用いて、サーバー運用記録(以下、ログ)を行っています。このログには当サイト訪問者のIPアドレス、参照ページ、アクセス時間等が記録されていますが、これらの情報は当サイトの一般的な統計情報として利用しており、その場合においても個人を特定するためには利用いたしません。また、アフィリエイトプログラムを利用しておりますので、第三者プログラムによりウェブビーコン等の技術を用いて、サイト利用に関する情報を取得しておりますが、アフィリエイトに必要な情報のみを扱っており、その他の目的での利用はいたしません。</p>
+            </blockquote>
+            <h6>安全管理について</h6>
+            <blockquote dir="ltr" style="margin-right: 0px;">
+                <p>個人情報の漏洩、紛失、破壊、改ざん等を防止するため、必要かつ適切な安全管理措置を講じてまいります。</p>
+            </blockquote>            
+            <h6>開示・訂正・削除・利用停止等について</h6>
+            <blockquote dir="ltr" style="margin-right: 0px;">
+                <p>参加者ご自身に関する個人情報の開示、訂正、削除、利用停止等を求められる場合は、当方のお問い合わせ窓口へご連絡ください。合理的な期間および範囲で、誠意をもって速やかに対応します。&nbsp;</p>
+            </blockquote>
+        </div>
+        <p>以上にご理解と同意いただける方のみ、お申し込みをお願いいたします。</p>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="AgreePolicy" />
+                    </label>
+                        <label asp-for="AgreePolicy"></label>
+</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="次へ" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">戻る</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

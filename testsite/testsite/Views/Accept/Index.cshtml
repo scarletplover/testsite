@@ -1,0 +1,23 @@
+﻿@model IEnumerable<testsite.Models.Member>
+
+@{
+    ViewData["Title"] = "BlackWacateへようこそ";
+}
+<div class="jumbotron">
+    <div class="container">
+        <h1>BlackWacate参加申込サイト</h1>
+        <p>
+            闇のテストワークショップ。<br />
+            参加はBlackWacate委員会の厳選な審査のもと決定します。
+        </p>
+        <p><a asp-action="Agreement" class="btn btn-primary btn-lg" role="button">参加申込</a></p>
+    </div> <!-- /container -->
+</div>
+<div class="row">
+    <div class="col-md-10">
+        <h2>このサイトについて</h2>
+        <ul>
+            <li>もちろん冗談です。</li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<testsite.Views.Judge.IndexViewModel>
+
+@{
+    ViewData["Title"] = "BlackWacate参加者選択画面";
+}
+
+<h2>BlackWacate参加者選択画面</h2>
+
+<form asp-action="Index" method="get">
+    名前:<input type="text" name="search" value="@ViewBag.Search" />
+    <input type="submit" value="検索" />
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameKana)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Office)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAccept)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameKana)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Office)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobType)
+                </td>
+                <td>
+                    @switch (item.IsAccept) {
+                        case true:
+                            <p>はい</p>
+                            break;
+                        case false:
+                            <p>いいえ</p>
+                            break;
+                        default:
+                            break;
+                    }
+                    </td>
+    
+                    <td>
+    
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-default">選択</a>
+    
+                    </td>
+    
+                </tr>
+        }
+    </tbody>
+</table>

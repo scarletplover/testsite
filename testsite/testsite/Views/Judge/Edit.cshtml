@@ -1,0 +1,179 @@
+﻿@model testsite.Views.Judge.EditViewModel
+
+@{
+    ViewData["Title"] = "BlackWacate参加審査";
+}
+
+
+<h2>BlackWacate参加審査</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>@Html.DisplayFor(model => model.Name)</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="ConfilmDate" />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" name="accept" value="参加を認める" class="btn btn-default" />
+                <input type="submit" name="no" value="参加を認めない" class="btn btn-default" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="IsVip" />
+                    </label>
+                    <label asp-for="IsVip"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="WacateNotes" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <textarea asp-for="WacateNotes" row="3" class="form-control"></textarea>
+                <span asp-validation-for="WacateNotes" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FamousPoint" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FamousPoint" class="form-control" readonly/>
+                <span asp-validation-for="FamousPoint" class="text-danger"></span>
+            </div>
+            <label asp-for="SkillPoint" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="SkillPoint" class="form-control" readonly/>
+                <span asp-validation-for="SkillPoint" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" id="btnGet" value="実行" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.Name)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Name)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.NameKana)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.NameKana)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.MailAddress)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.MailAddress)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.PostNo)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.PostNo)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Address1)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Address1)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Address2)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Address2)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Twitter)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Twitter)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.BirthDay)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.BirthDay)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Office)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Office)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.JobTypeId)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.JobType.Type)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Yakushoku)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Yakushoku)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.RepeatCount)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.RepeatCount)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Issue)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Issue)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.UserNotes)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.UserNotes)
+    </dd>
+</dl>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript">
+            $(function () {
+                $("#btnGet").click(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Judge/GetPoint",
+                        data: '{' 
+                        +'twitter: "'+ $("#Twitter").val() + '",'
+                        + 'name: "' + $("#Name").val() + '",'
+                        + 'office: "' + $("#Office").val() + '",'
+                        + 'repeatCount: "' + $("#RepeatCount").val() + '",'
+                        + '" }',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                            $("#FamousPoint").val(response.famouspoint);
+                            $("#SkillPoint").val(response.skillpoint);
+                        },
+                        failure: function (response) {
+                            alert(response.responseText);
+                        },
+                        error: function (response) {
+                            alert(response.responseText);
+                        }
+                    });
+                });
+            });
+    </script>
+}

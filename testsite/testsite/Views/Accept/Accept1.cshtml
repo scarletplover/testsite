@@ -1,0 +1,74 @@
+﻿@model testsite.Views.Accept.Accept1ViewModel
+
+@{
+    ViewData["Title"] = "BlackWacateお申込み";
+}
+
+<h2>BlackWacateお申込み</h2>
+
+<form asp-action="Accept1">
+    <div class="form-horizontal">
+        <h4>－基本項目－</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="NameKana" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="NameKana" class="form-control" />
+                <span asp-validation-for="NameKana" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="MailAddress" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="MailAddress" class="form-control" />
+                <span asp-validation-for="MailAddress" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PostNo" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PostNo" class="form-control" />
+                <span asp-validation-for="PostNo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Address1" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Address1" class="form-control" />
+                <span asp-validation-for="Address1" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Address2" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Address2" class="form-control" />
+                <span asp-validation-for="Address2" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BirthDay" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BirthDay" class="form-control" />
+                <span asp-validation-for="BirthDay" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="次へ" class="btn btn-default" />
+                <a asp-action="Index" class="btn btn-default">戻る</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

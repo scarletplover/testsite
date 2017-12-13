@@ -1,0 +1,143 @@
+@model testsite.Models.Member
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Member</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="Id" />
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NameKana)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NameKana)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MailAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MailAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PostNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AgreePolicy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AgreePolicy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Twitter)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Twitter)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthDay)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BirthDay)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Office)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Office)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Yakushoku)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Yakushoku)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RepeatCount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RepeatCount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Issue)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Issue)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserNotes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserNotes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FamousPoint)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FamousPoint)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SkillPoint)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SkillPoint)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsAccept)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsAccept)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsVip)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsVip)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WacateNotes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WacateNotes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.JobType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.JobType.Id)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
